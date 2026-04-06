@@ -1,0 +1,46 @@
+[
+    {
+        "title": "Introduction to Judging",
+        "description": "Learn the fundamentals of adjudicating debates in the British Parliamentary format. This course covers the roles of judges, how to assess arguments, and the process of delivering constructive feedback to debaters.",
+        "thumbnail_url": "https://images.unsplash.com/photo-1559825945858-d10d557c795f?w=800",
+        "category": "judge_training",
+        "difficulty_level": "beginner",
+        "estimated_hours": 8,
+        "is_published": true,
+        "created_by": "admin",
+        "created_at": "2026-01-20 10:00:00"
+    },
+    {
+        "title": "Advanced Argumentation Techniques",
+        "description": "Master advanced debate strategies including case construction, rebuttal techniques, and strategic framing. This course is designed for experienced debaters looking to refine their skills and gain a competitive edge.",
+        "thumbnail_url": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800",
+        "category": "speaker_training",
+        "difficulty_level": "advanced",
+        "estimated_hours": 15,
+        "is_published": true,
+        "created_by": "admin",
+        "created_at": "2026-01-20 10:00:00"
+    },
+    {
+        "title": "British Parliamentary Format Basics",
+        "description": "A comprehensive guide to the BP debate format, covering roles, rules, and responsibilities. Essential for both judges and debaters new to the format.",
+        "thumbnail_url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800",
+        "category": "general",
+        "difficulty_level": "beginner",
+        "estimated_hours": 5,
+        "is_published": true,
+        "created_by": "admin",
+        "created_at": "2026-01-20 10:00:00"
+    },
+    {
+        "title": "Public Speaking and Delivery",
+        "description": "Enhance your speaking skills with techniques for voice modulation, body language, and audience engagement.",
+        "thumbnail_url": "https://images.unsplash.com/photo-1475721027785-f74ecf07b787?w=800",
+        "category": "speaker_training",
+        "difficulty_level": "intermediate",
+        "estimated_hours": 10,
+        "is_published": true,
+        "created_by": "admin",
+        "created_at": "2026-01-20 10:00:00"
+    }
+]

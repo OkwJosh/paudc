@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "user_id": "user123",
+        "course_id": 1,
+        "module_id": 1,
+        "material_id": 1,
+        "status": "completed",
+        "last_accessed_at": "2026-03-01T14:30:00Z"
+    }
+]

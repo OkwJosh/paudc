@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "course_id": 1,
+        "module_id": 1,
+        "title": "BP Format Basics",
+        "description": "Test your knowledge on the foundational rules of British Parliamentary debate.",
+        "time_limit_minutes": 30,
+        "max_attempts": 3,
+        "passing_score": 70,
+        "is_published": true,
+        "created_at": "2026-01-20T10:00:00Z"
+    }
+]

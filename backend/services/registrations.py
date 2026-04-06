@@ -1,0 +1,93 @@
+import logging
+from typing import Optional, Dict, Any, List
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select, func
+
+from models.registrations import Registrations
+
+logger = logging.getLogger(__name__)
+
+class RegistrationsService:
+    def __init__(self, db: AsyncSession):
+        self.db = db
+
+    async def create(self, data: Dict[str, Any], user_id: str) -> Optional[Registrations]:
+        data["user_id"] = user_id
+        obj = Registrations(**data)
+        self.db.add(obj)
+        try:
+            await self.db.commit()
+            await self.db.refresh(obj)
+            return obj
+        except Exception as e:
+            await self.db.rollback()
+            raise
+
+    async def get_by_id(self, obj_id: int) -> Optional[Registrations]:
+        query = select(Registrations).where(Registrations.id == obj_id)
+        return (await self.db.execute(query)).scalar_one_or_none()
+
+    async def get_list(self, skip: int = 0, limit: int = 20, query: Optional[Dict[str, Any]] = None, sort: Optional[str] = None, user_id: str = None) -> Dict[str, Any]:
+        try:
+            count_query = select(func.count(Registrations.id))
+            if query:
+                for field, value in query.items():
+                    if hasattr(Registrations, field):
+                        count_query = count_query.where(getattr(Registrations, field) == value)
+            total = (await self.db.execute(count_query)).scalar()
+            
+            data_query = select(Registrations)
+            if query:
+                for field, value in query.items():
+                    if hasattr(Registrations, field):
+                        data_query = data_query.where(getattr(Registrations, field) == value)
+            if sort:
+                if sort.startswith("-"):
+                    field_name = sort[1:]
+                    if hasattr(Registrations, field_name):
+                        data_query = data_query.order_by(getattr(Registrations, field_name).desc())
+                else:
+                    if hasattr(Registrations, sort):
+                        data_query = data_query.order_by(getattr(Registrations, sort).asc())
+                        
+            data_query = data_query.offset(skip).limit(limit)
+            items = (await self.db.execute(data_query)).scalars().all()
+            return {"items": items, "total": total, "skip": skip, "limit": limit}
+        except Exception as e:
+            logger.error(f"Error fetching registrations: {str(e)}")
+            raise
+
+    async def update(self, obj_id: int, update_data: Dict[str, Any], user_id: str = None) -> Optional[Registrations]:
+        query = select(Registrations).where(Registrations.id == obj_id)
+        if user_id:
+            query = query.where(Registrations.user_id == user_id)
+        obj = (await self.db.execute(query)).scalar_one_or_none()
+        
+        if not obj:
+            return None
+        for key, value in update_data.items():
+            if hasattr(obj, key):
+                setattr(obj, key, value)
+        try:
+            await self.db.commit()
+            await self.db.refresh(obj)
+            return obj
+        except Exception as e:
+            await self.db.rollback()
+            raise
+
+    async def delete(self, obj_id: int, user_id: str = None) -> bool:
+        query = select(Registrations).where(Registrations.id == obj_id)
+        if user_id:
+            query = query.where(Registrations.user_id == user_id)
+        obj = (await self.db.execute(query)).scalar_one_or_none()
+        
+        if not obj:
+            return False
+        try:
+            await self.db.delete(obj)
+            await self.db.commit()
+            return True
+        except Exception as e:
+            await self.db.rollback()
+            raise

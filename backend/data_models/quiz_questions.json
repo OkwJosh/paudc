@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "quiz_id": 1,
+        "question_text": "What is the maximum speaking time for a Prime Minister in the BP format?",
+        "question_type": "multiple_choice",
+        "options": "[\"5 minutes\", \"7 minutes\", \"8 minutes\", \"10 minutes\"]",
+        "correct_answer": "7 minutes",
+        "points": 10,
+        "order_index": 1
+    },
+    {
+        "id": 2,
+        "quiz_id": 1,
+        "question_text": "Points of Information (POIs) can be offered during the first and last minute of a speech.",
+        "question_type": "true_false",
+        "options": "[\"True\", \"False\"]",
+        "correct_answer": "False",
+        "points": 5,
+        "order_index": 2
+    }
+]

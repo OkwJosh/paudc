@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "user_id": "user123",
+        "quiz_id": 1,
+        "score": 85,
+        "started_at": "2026-03-05T10:00:00Z",
+        "completed_at": "2026-03-05T10:45:00Z",
+        "attempt_number": 1,
+        "passed": true
+    }
+]

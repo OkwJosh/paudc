@@ -1,0 +1,332 @@
+import { useState } from 'react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import { Card, CardContent } from '@/components/ui/card';
+import { ChevronLeft, ChevronRight, Shield } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import michelle from '../assets/adjudicators/michelle.png';
+import elisha from '../assets/adjudicators/elisha.jpeg';
+import umar from '../assets/adjudicators/Umar Buckus.jpeg';
+import feyisayo from '../assets/adjudicators/feyisayo.png';
+import methembe from '../assets/adjudicators/methembe.jpeg';
+
+export default function Team() {
+    const [capIndex, setCapIndex] = useState(0);
+    const [advisoryIndex, setAdvisoryIndex] = useState(0);
+    const [locIndex, setLocIndex] = useState(0);
+
+    const advisoryLeadership = [
+        {
+            name: 'Rev. Fr. Prof. Hyacinth Ichoku',
+            role: 'Vice-Chancellor',
+            bio: 'Visionary academic leader and administrator, guiding the university and championship with integrity and excellence.',
+            image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=2000&auto=format&fit=crop'
+        },
+        {
+            name: 'Most Rev. Dr. Matthew Hassan Kukah',
+            role: 'Chief Patron',
+            bio: 'Renowned religious leader and advocate for education, serving as the Chief Patron of the tournament.',
+            image: 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=2000&auto=format&fit=crop'
+        },
+        {
+            name: 'Chief Solomon Asemota, SAN',
+            role: 'Father of the Tournament',
+            bio: 'Distinguished legal luminary and foundational supporter, celebrated as the Father of the Tournament.',
+            image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=2000&auto=format&fit=crop'
+        },
+        {
+            name: 'Prof. Paul Obo Idornigie, SAN',
+            role: 'Senior Advisor, Adjudicators Academy',
+            bio: 'Distinguished legal scholar and debate expert overseeing judge training and certification programs.',
+            image: 'https://mgx-backend-cdn.smedan.gov.ng/generate/images/906150/2026-01-20/ead537cf-995b-4aac-9267-00c1765eba13.png'
+        },
+        {
+            name: 'Rev. Fr. Gokum Richard',
+            role: 'Advisor, Funding & Partnerships',
+            bio: 'Advisor on funding and partnerships, supporting the championship’s growth and sustainability.',
+            image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=2000&auto=format&fit=crop'
+        }
+    ];
+
+    const capTeam = [
+        {
+            name: 'Michelle Adika',
+            role: 'Chief Adjudicator',
+            credentials: 'Michelle Adika is a Kenyan law student, two-term debate society president, and accomplished speaker and adjudicator who has earned continental and regional Best Speaker honours, reached major international finals, and plays a leading role in both BP and WSDC circuits across Africa.',
+            image: michelle
+        },
+        {
+            name: 'Elisha Owusu Akyaw',
+            role: 'Chief Adjudicator',
+            credentials: 'Elisha Owusu Akyaw is a Ghanaian debater, coach, and Web3 professional who reached the WUDC ESL Final and multiple PAUDC Finals, and remains deeply committed to growing the African debate space through coaching and mentorship.',
+            image: elisha
+        },
+        {
+            name: 'Umar Buckus',
+            role: 'Chief Adjudicator',
+            credentials: 'Umar Buckus is a South African debater, UCL alumnus, three-time WUDC Final Judge, and co-founder of Uhuru World Championships',
+            image: umar
+        },
+        {
+            name: 'Methembe Michael Mthimkhulu',
+            role: 'Deputy Chief Adjudicator',
+            credentials: 'Methembe Michael Mthimkhulu is a Zimbabwean lawyer-in-training and former national debater who has transitioned into coaching, administration, and adjudication, earning recognition as a continental-level Chief Adjudicator and outround judge at prestigious international tournaments.',
+            image: methembe
+        },
+        {
+            name: 'Feyisayo Ajayi-Abu',
+            role: 'Tab Mistress',
+            credentials: 'Feyisayo Ajayi-Abu is an experienced Tab Mistress who has managed tabulation for numerous major Nigerian debating tournaments since 2022, spanning both Debate and Public Speaking formats.',
+            image: feyisayo
+        }
+    ];
+
+    const locTeam = [
+        {
+            name: 'Placeholder Name 1',
+            role: 'Tournament Convener',
+            bio: 'Overseeing the strategic vision, partnerships, and overall execution of the championship.',
+            image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop'
+        },
+        {
+            name: 'Placeholder Name 2',
+            role: 'Head of Operations',
+            bio: 'Ensuring seamless logistics, accommodations, and event flow for all attending delegates.',
+            image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2000&auto=format&fit=crop'
+        }
+    ];
+
+    const handleAdvisoryPrev = () => setAdvisoryIndex(prev => (prev === 0 ? advisoryLeadership.length - 1 : prev - 1));
+    const handleAdvisoryNext = () => setAdvisoryIndex(prev => (prev === advisoryLeadership.length - 1 ? 0 : prev + 1));
+
+    const handleCapPrev = () => setCapIndex(prev => (prev === 0 ? capTeam.length - 1 : prev - 1));
+    const handleCapNext = () => setCapIndex(prev => (prev === capTeam.length - 1 ? 0 : prev + 1));
+
+    const handleLocPrev = () => setLocIndex(prev => (prev === 0 ? locTeam.length - 1 : prev - 1));
+    const handleLocNext = () => setLocIndex(prev => (prev === locTeam.length - 1 ? 0 : prev + 1));
+
+    return (
+        <div className="min-h-screen bg-[#F6F0E1] text-[#1B5E3B]">
+            <Navbar />
+
+            {/* Hero Section */}
+            <section className="bg-gradient-to-br from-[#1B5E3B] to-[#0d301e] text-[#F6F0E1] pt-32 pb-24">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div className="flex justify-center mb-8">
+                        <div className="p-5 bg-[#F6F0E1]/10 rounded-full border border-[#C8A046]/30 backdrop-blur-sm">
+                            <Shield className="h-14 w-14 text-[#C8A046]" />
+                        </div>
+                    </div>
+                    <h1 className="text-5xl md:text-6xl font-extrabold mb-6">Meet the Team</h1>
+                    <p className="text-xl md:text-2xl text-[#F6F0E1]/80 max-w-3xl mx-auto font-medium">
+                        The dedicated professionals bringing PAUDC 2026 to life
+                    </p>
+                </div>
+            </section>
+
+            {/* Advisory Leadership Section (Gold Accent) */}
+            <section className="py-24 bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold text-[#1B5E3B] mb-6">Advisory Leadership</h2>
+                        <div className="w-24 h-1.5 bg-[#C8A046] mx-auto rounded-full"></div>
+                    </div>
+
+                    <div className="relative max-w-3xl mx-auto">
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={handleAdvisoryPrev}
+                            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-16 z-10 h-14 w-14 rounded-full border-[#C8A046] text-[#C8A046] hover:bg-[#C8A046] hover:text-white bg-white shadow-md transition-all"
+                        >
+                            <ChevronLeft className="h-8 w-8" />
+                        </Button>
+
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={handleAdvisoryNext}
+                            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-16 z-10 h-14 w-14 rounded-full border-[#C8A046] text-[#C8A046] hover:bg-[#C8A046] hover:text-white bg-white shadow-md transition-all"
+                        >
+                            <ChevronRight className="h-8 w-8" />
+                        </Button>
+
+                        <Card className="border border-[#C8A046]/30 shadow-xl max-w-2xl mx-auto bg-[#F6F0E1]/30 rounded-3xl overflow-hidden">
+                            <CardContent className="p-8 md:p-12">
+                                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
+                                    <img
+                                        src={advisoryLeadership[advisoryIndex].image}
+                                        alt={advisoryLeadership[advisoryIndex].name}
+                                        className="w-36 h-36 shrink-0 rounded-full object-cover border-4 border-[#C8A046] shadow-lg"
+                                    />
+                                    <div>
+                                        <h3 className="text-2xl font-bold text-[#1B5E3B] mb-2">{advisoryLeadership[advisoryIndex].name}</h3>
+                                        <p className="text-lg text-[#A4372C] font-bold mb-4">{advisoryLeadership[advisoryIndex].role}</p>
+                                        <p className="text-[#1B5E3B]/80 text-lg leading-relaxed">{advisoryLeadership[advisoryIndex].bio}</p>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        <div className="flex justify-center gap-3 mt-8">
+                            {advisoryLeadership.map((_, idx) => (
+                                <button
+                                    key={idx}
+                                    onClick={() => setAdvisoryIndex(idx)}
+                                    className={`h-3 rounded-full transition-all duration-300 ${idx === advisoryIndex ? 'bg-[#C8A046] w-10' : 'bg-[#C8A046]/30 w-3 hover:bg-[#C8A046]/60'}`}
+                                    aria-label={`Go to slide ${idx + 1}`}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Core Adjudication Panel Section (Green Accent) */}
+            <section className="py-24 bg-[#F6F0E1]">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold text-[#1B5E3B] mb-6">Core Adjudication Panel (CAP)</h2>
+                        <div className="w-24 h-1.5 bg-[#1B5E3B] mx-auto rounded-full mb-8"></div>
+                        <p className="text-xl text-[#1B5E3B]/80 max-w-3xl mx-auto font-medium">
+                            World-class adjudicators ensuring fairness, excellence, and educational value
+                        </p>
+                    </div>
+
+                    <div className="relative max-w-3xl mx-auto">
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={handleCapPrev}
+                            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-16 z-10 h-14 w-14 rounded-full border-[#1B5E3B] text-[#1B5E3B] hover:bg-[#1B5E3B] hover:text-[#F6F0E1] bg-white shadow-md transition-all"
+                        >
+                            <ChevronLeft className="h-8 w-8" />
+                        </Button>
+
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={handleCapNext}
+                            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-16 z-10 h-14 w-14 rounded-full border-[#1B5E3B] text-[#1B5E3B] hover:bg-[#1B5E3B] hover:text-[#F6F0E1] bg-white shadow-md transition-all"
+                        >
+                            <ChevronRight className="h-8 w-8" />
+                        </Button>
+
+                        <Card className="border border-[#1B5E3B]/20 shadow-xl max-w-2xl mx-auto bg-white rounded-3xl overflow-hidden">
+                            <CardContent className="p-8 md:p-12">
+                                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
+                                    <img
+                                        src={capTeam[capIndex].image}
+                                        alt={capTeam[capIndex].name}
+                                        className="w-36 h-36 shrink-0 rounded-full object-cover border-4 border-[#1B5E3B] shadow-lg"
+                                    />
+                                    <div>
+                                        <h3 className="text-2xl font-bold text-[#1B5E3B] mb-2">{capTeam[capIndex].name}</h3>
+                                        <p className="text-lg text-[#C8A046] font-bold mb-4">{capTeam[capIndex].role}</p>
+                                        <p className="text-[#1B5E3B]/80 text-lg leading-relaxed">{capTeam[capIndex].credentials}</p>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        <div className="flex justify-center gap-3 mt-8">
+                            {capTeam.map((_, idx) => (
+                                <button
+                                    key={idx}
+                                    onClick={() => setCapIndex(idx)}
+                                    className={`h-3 rounded-full transition-all duration-300 ${idx === capIndex ? 'bg-[#1B5E3B] w-10' : 'bg-[#1B5E3B]/20 w-3 hover:bg-[#1B5E3B]/50'}`}
+                                    aria-label={`Go to slide ${idx + 1}`}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Local Organizing Committee (Red Accent) */}
+            <section className="py-24 bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold text-[#1B5E3B] mb-6">Local Organizing Committee</h2>
+                        <div className="w-24 h-1.5 bg-[#A4372C] mx-auto rounded-full mb-8"></div>
+                        <p className="text-xl text-[#1B5E3B]/80 max-w-3xl mx-auto font-medium">
+                            Experienced professionals dedicated to delivering Africa's premier debate championship
+                        </p>
+                    </div>
+
+                    <div className="relative max-w-3xl mx-auto">
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={handleLocPrev}
+                            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-16 z-10 h-14 w-14 rounded-full border-[#A4372C] text-[#A4372C] hover:bg-[#A4372C] hover:text-white bg-[#F6F0E1] shadow-md transition-all"
+                        >
+                            <ChevronLeft className="h-8 w-8" />
+                        </Button>
+
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={handleLocNext}
+                            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-16 z-10 h-14 w-14 rounded-full border-[#A4372C] text-[#A4372C] hover:bg-[#A4372C] hover:text-white bg-[#F6F0E1] shadow-md transition-all"
+                        >
+                            <ChevronRight className="h-8 w-8" />
+                        </Button>
+
+                        <Card className="border border-[#A4372C]/20 shadow-xl max-w-2xl mx-auto bg-[#F6F0E1]/30 rounded-3xl overflow-hidden">
+                            <CardContent className="p-8 md:p-12">
+                                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
+                                    <img
+                                        src={locTeam[locIndex].image}
+                                        alt={locTeam[locIndex].name}
+                                        className="w-36 h-36 shrink-0 rounded-full object-cover border-4 border-[#A4372C] shadow-lg"
+                                    />
+                                    <div>
+                                        <h3 className="text-2xl font-bold text-[#1B5E3B] mb-2">{locTeam[locIndex].name}</h3>
+                                        <p className="text-lg text-[#1B5E3B] font-bold mb-4">{locTeam[locIndex].role}</p>
+                                        <p className="text-[#1B5E3B]/80 text-lg leading-relaxed">{locTeam[locIndex].bio}</p>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        <div className="flex justify-center gap-3 mt-8">
+                            {locTeam.map((_, idx) => (
+                                <button
+                                    key={idx}
+                                    onClick={() => setLocIndex(idx)}
+                                    className={`h-3 rounded-full transition-all duration-300 ${idx === locIndex ? 'bg-[#A4372C] w-10' : 'bg-[#A4372C]/30 w-3 hover:bg-[#A4372C]/60'}`}
+                                    aria-label={`Go to slide ${idx + 1}`}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Call to Action */}
+            <section className="py-24 bg-[#1B5E3B] text-[#F6F0E1] text-center">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 className="text-4xl font-black mb-6">Join us at PAUDC 2026</h2>
+                    <p className="text-xl text-[#F6F0E1]/80 mb-10 leading-relaxed max-w-2xl mx-auto">
+                        Be part of Africa's most prestigious debate championship, guided by professionals committed to excellence and educational impact.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                        <a href="/register" className="inline-block">
+                            <button className="px-10 py-4 bg-[#C8A046] hover:bg-[#b08c3e] text-[#022512] font-bold rounded-full shadow-lg transition-transform hover:-translate-y-1">
+                                Register Now
+                            </button>
+                        </a>
+                        <a href="/contact" className="inline-block">
+                            <button className="px-10 py-4 bg-transparent border-2 border-[#C8A046] hover:bg-[#C8A046] text-[#C8A046] hover:text-[#022512] font-bold rounded-full transition-all hover:-translate-y-1">
+                                Contact Us
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <Footer />
+        </div>
+    );
+}

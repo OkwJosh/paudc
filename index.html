@@ -1,0 +1,141 @@
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "./store";
+import { setUserAction } from "./userSlice";
+import { useQuery } from "react-query";
+import axios from "axios";
+
+type EventData = {
+  date: string;
+  location: string;
+  host: string;
+};
+
+const fetchEventData = async (): Promise<EventData> => {
+  const { data } = await axios.get("/api/event-data");
+  return data;
+};
+
+const App: React.FC = () => {
+  const dispatch = useDispatch();
+  const userActions = useSelector((state: RootState) => state.user.userActions);
+
+  const { data: eventData, isLoading } = useQuery("eventData", fetchEventData);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div className="bg-[#f6f0e1] w-full min-h-screen">
+      <header className="relative w-full">
+        <div className="flex justify-between items-center bg-black bg-opacity-10 rounded-full border-solid border-3 border-black border-opacity-20 h-14 mx-6 max-lg:mx-4 max-w-screen-xl mx-auto px-6 flex-wrap lg:flex-nowrap">
+          <nav className="flex gap-6">
+            {["Home", "About", "Team", "Schedule", "Civil Panel", "FAQ", "Contact"].map((item) => (
+              <div key={item} className="text-black text-lg font-light">
+                {item}
+              </div>
+            ))}
+          </nav>
+          <div className="flex gap-4 mt-4 md:mt-0">
+            {["LMS Portal", "Register Now"].map((action) => (
+              <button
+                key={action}
+                className="rounded-full border-2 border-black h-12 w-52 flex justify-center items-center text-lg cursor-pointer bg-yellow-400 hover:bg-yellow-500"
+                onClick={() => dispatch(setUserAction(action))}
+              >
+                {action}
+              </button>
+            ))}
+          </div>
+        </div>
+        <img
+          className="absolute left-15 top-7"
+          src="https://app.codigma.io/api/uploads/2026/03/11/asset-74a2489a-0372-424b-ad0d-8c870eb566e4.png"
+          alt="PAUDC Logo"
+        />
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-44 bg-black bg-opacity-10 rounded-full border border-opacity-20 h-9 w-80 flex items-center justify-center">
+          <span className="text-black text-opacity-90 font-arimo text-sm tracking-wider">
+            Pan-African University Debating Championship
+          </span>
+        </div>
+      </header>
+      <main>
+        <section className="hero relative w-full">
+          <div className="flex flex-col items-center gap-12 mt-72">
+            <h1 className="text-[7.5rem] text-black text-center">PAUDC 2026</h1>
+            <p className="text-3xl text-gray-600 text-center">The Sound of Africa's Resolve</p>
+            <div className="flex gap-24">
+              <div className="flex items-center gap-5">
+                <img
+                  src="https://app.codigma.io/api/uploads/2026/03/11/svg-cb79a49b-9931-469e-bbfe-231cac53ad1a.svg"
+                  alt="Calendar Icon"
+                  width="40"
+                  height="40"
+                />
+                <div className="text-lg text-black text-opacity-90">{eventData?.date}</div>
+              </div>
+              <div className="flex items-center gap-5">
+                <img
+                  src="https://app.codigma.io/api/uploads/2026/03/11/svg-4bed58aa-7166-4603-b534-56e6731eeb00.svg"
+                  alt="Map Icon"
+                  width="40"
+                  height="40"
+                />
+                <div className="text-lg text-black text-opacity-90">{eventData?.location}</div>
+              </div>
+              <div className="flex items-center gap-5">
+                <img
+                  src="https://app.codigma.io/api/uploads/2026/03/11/svg-01342ff4-1856-445e-a643-6954cd9c603c.svg"
+                  alt="University Icon"
+                  width="40"
+                  height="40"
+                />
+                <div className="text-lg text-black text-opacity-90">{eventData?.host}</div>
+              </div>
+            </div>
+            <div className="flex gap-12">
+              <div className="flex flex-col items-center">
+                <div className="text-5xl text-white bg-black rounded-full w-36 h-36 flex justify-center items-center mb-2">
+                  317
+                </div>
+                <div className="text-2xl text-black">Days</div>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="text-5xl text-white bg-black rounded-full w-36 h-36 flex justify-center items-center mb-2">
+                  21
+                </div>
+                <div className="text-2xl text-black">Hours</div>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="text-5xl text-white bg-black rounded-full w-36 h-36 flex justify-center items-center mb-2">
+                  35
+                </div>
+                <div className="text-2xl text-black">Minutes</div>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="text-5xl text-white bg-black rounded-full w-36 h-36 flex justify-center items-center mb-2">
+                  41
+                </div>
+                <div className="text-2xl text-black">Seconds</div>
+              </div>
+            </div>
+            <div className="flex gap-12">
+              <button className="bg-yellow-400 rounded-full w-72 h-20 text-lg shadow-lg hover:bg-yellow-500">
+                Apply as Adjudicator
+              </button>
+              <button className="bg-yellow-400 rounded-full w-72 h-20 text-lg shadow-lg hover:bg-yellow-500">
+                Register a Team
+              </button>
+              <button className="bg-yellow-400 rounded-full w-72 h-20 text-lg shadow-lg hover:bg-yellow-500">
+                Become a Sponsor
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+};
+
+export default App;

@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply m-0 p-0 font-sans;
+}
+
+.bg-[#f6f0e1] {
+  @apply bg-[#f6f0e1];
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-semibold;
+}
+
+header {
+  @apply relative w-full;
+}
+
+button {
+  @apply rounded-full border-solid border-2 h-12 flex justify-center items-center text-lg cursor-pointer;
+}
+
+.nav-item {
+  @apply text-black text-lg font-light;
+}
+
+.hero {
+  @apply relative w-full;
+}
+
+.hero-content {
+  @apply flex flex-col items-center gap-y-12 mt-72;
+}
+
+.title {
+  @apply text-[7.5rem] text-black text-center;
+}
+
+.subtitle {
+  @apply text-3xl text-gray-600 text-center;
+}
+
+.event-details {
+  @apply flex gap-24;
+}
+
+.event-detail {
+  @apply flex items-center gap-5;
+}
+
+.event-date,
+.event-location,
+.event-host {
+  @apply text-lg text-black text-opacity-90;
+}
+
+.countdown {
+  @apply flex gap-12;
+}
+
+.countdown-item {
+  @apply flex flex-col items-center;
+}
+
+.countdown-number {
+  @apply text-5xl text-white bg-black rounded-full w-36 h-36 flex justify-center items-center mb-2;
+}
+
+.countdown-label {
+  @apply text-2xl text-black;
+}
+
+.action-buttons {
+  @apply flex gap-12;
+}
+
+.apply-adjudicator,
+.register-team,
+.become-sponsor {
+  @apply bg-yellow-400 rounded-full w-72 h-20 text-lg shadow-lg hover:bg-yellow-500;
+}
+
+@media only screen and (max-width: 768px) {
+  .frame2 {
+    @apply mx-4 px-4 flex-wrap;
+  }
+
+  .hero-content {
+    @apply px-4;
+  }
+
+  .navigation,
+  .user-actions,
+  .event-details,
+  .countdown,
+  .prizes-distribution,
+  .promo-stats-grid {
+    @apply flex flex-col items-center;
+  }
+
+  .prizes-info,
+  .distribution-info,
+  .wudc-sponsorship,
+  .action-buttons {
+    @apply w-[90%];
+  }
+
+  .compete-title,
+  .compete-description {
+    @apply text-center;
+  }
+}

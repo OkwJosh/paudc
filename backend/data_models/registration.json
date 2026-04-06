@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "user_id": "user123",
+        "registration_type": "individual",
+        "participant_role": "debater",
+        "status": "confirmed",
+        "institution_name": "Veritas University",
+        "institution_country": "Nigeria",
+        "institution_email": "debate@veritas.edu.ng",
+        "institution_phone": "+2348000000000",
+        "number_of_participants": 1,
+        "first_name": "Chukwuma",
+        "last_name": "Mordi",
+        "email": "mordi@example.com",
+        "phone": "+2349012345678",
+        "country": "Nigeria",
+        "university": "Veritas University",
+        "dietary_requirements": "None",
+        "special_needs": "None",
+        "created_at": "2026-02-15T08:00:00Z"
+    }
+]

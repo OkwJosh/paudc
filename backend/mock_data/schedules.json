@@ -1,0 +1,90 @@
+[
+    {
+        "event_date": "2026-12-05",
+        "start_time": "09:00",
+        "end_time": "17:00",
+        "title": "Opening Ceremony & Registration",
+        "description": "Welcome address, participant registration, and official opening of PAUDC 2026.",
+        "location": "Main Auditorium, Veritas University",
+        "category": "general",
+        "is_public": true,
+        "created_at": "2026-01-15 10:00:00"
+    },
+    {
+        "event_date": "2026-12-05",
+        "start_time": "18:00",
+        "end_time": "20:00",
+        "title": "Welcome Dinner",
+        "description": "Networking dinner for all participants.",
+        "location": "University Dining Hall",
+        "category": "general",
+        "is_public": false,
+        "created_at": "2026-01-15 10:00:00"
+    },
+    {
+        "event_date": "2026-12-06",
+        "start_time": "09:00",
+        "end_time": "12:00",
+        "title": "Training & Academy - Session 1",
+        "description": "Training and certification program for debate judges.",
+        "location": "Lecture Hall A",
+        "category": "academy",
+        "is_public": false,
+        "created_at": "2026-01-15 10:00:00"
+    },
+    {
+        "event_date": "2026-12-07",
+        "start_time": "10:00",
+        "end_time": "13:00",
+        "title": "Voices of a Continent Panel",
+        "description": "Rethinking Pan-Africanism for a New Generation.",
+        "location": "Main Auditorium",
+        "category": "panel",
+        "is_public": true,
+        "created_at": "2026-01-15 10:00:00"
+    },
+    {
+        "event_date": "2026-12-08",
+        "start_time": "09:00",
+        "end_time": "17:00",
+        "title": "Debate Championship - Round 1",
+        "description": "First round of British Parliamentary debate competition.",
+        "location": "Debate Halls 1-5",
+        "category": "debate",
+        "is_public": true,
+        "created_at": "2026-01-15 10:00:00"
+    },
+    {
+        "event_date": "2026-12-08",
+        "start_time": "14:00",
+        "end_time": "16:00",
+        "title": "Public Speaking Championship",
+        "description": "Celebrating clarity, persuasion, and thought leadership through speech.",
+        "location": "Seminar Room 1",
+        "category": "speaking",
+        "is_public": true,
+        "created_at": "2026-01-15 10:00:00"
+    },
+    {
+        "event_date": "2026-12-12",
+        "start_time": "18:00",
+        "end_time": "22:00",
+        "title": "Cultural Exhibition & Gala",
+        "description": "Celebrating Africa's artistic diversity and shared identity.",
+        "location": "University Grounds",
+        "category": "cultural",
+        "is_public": true,
+        "created_at": "2026-01-15 10:00:00"
+    },
+    {
+        "event_date": "2026-12-13",
+        "start_time": "15:00",
+        "end_time": "18:00",
+        "title": "Grand Finals & Closing Ceremony",
+        "description": "Championship finals and awards ceremony.",
+        "location": "Main Auditorium",
+        "category": "debate",
+        "is_public": true,
+        "created_at": "2026-01-15 10:00:00"
+    }
+]

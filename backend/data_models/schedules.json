@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "event_date": "2026-12-05",
+        "start_time": "09:00",
+        "end_time": "17:00",
+        "title": "Registration and Welcome Mix",
+        "description": "Arrival, registration, and welcome reception for all participants.",
+        "location": "Veritas Main Campus Square",
+        "category": "general",
+        "is_public": true,
+        "created_at": "2026-01-15T10:00:00Z"
+    },
+    {
+        "id": 2,
+        "event_date": "2026-12-06",
+        "start_time": "09:00",
+        "end_time": "11:00",
+        "title": "Debate Championship - Round 1",
+        "description": "First round of the British Parliamentary debate competition.",
+        "location": "Debate Halls 1-5",
+        "category": "speaking",
+        "is_public": false,
+        "created_at": "2026-01-15T10:00:00Z"
+    }
+]

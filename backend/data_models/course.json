@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "BP Debate Masterclass",
+        "description": "A comprehensive guide to the British Parliamentary debate format, designed for participants of PAUDC 2026.",
+        "thumbnail_url": "/assets/course-thumbnail-1.jpg",
+        "difficulty_level": "intermediate",
+        "estimated_hours": 10,
+        "is_published": true,
+        "created_by": "admin",
+        "created_at": "2026-01-20T10:00:00Z",
+        "updated_at": "2026-01-20T10:00:00Z"
+    }
+]

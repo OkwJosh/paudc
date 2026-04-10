@@ -359,7 +359,7 @@ export default function Dashboard() {
               ))}
             </div>
             {/* CTA - Fixed at bottom of the hero height on mobile */}
-            <div className="mt-20 flex flex-row gap-4 w-full justify-center px-4 mb-4 md:mb-0">
+            <div className="mt-20 sm:mt-0 flex flex-row gap-4 w-full justify-center px-4 mb-4 md:mb-0">
               <Link to="/register" className="flex-1 max-w-[200px]">
                 <button className="w-full h-14 bg-[#C8A046] text-[#022512] rounded-full text-sm font-bold shadow-xl uppercase tracking-wider">
                   Request invite

@@ -55,8 +55,8 @@ export default function FigmaCenteredHero({ timeLeft, emblemSrc }: FigmaCentered
                     <img src={emblemSrc} alt="PAUDC 2026 Logo" className="h-14 w-auto object-contain" />
                 </div>
 
-                {/* ── Meta pills — stack vertically on mobile ── */}
-                <div className="mb-5 flex flex-col gap-2 md:flex-row md:flex-wrap md:items-center md:gap-3">
+                {/* ── Meta pills — wraps naturally instead of forcing a vertical stack ── */}
+                <div className="mb-5 flex flex-row flex-wrap items-center gap-2 md:gap-3">
                     <div className="flex items-center gap-1.5 rounded-full border border-[#DAC2AE40] bg-white/70 px-3 py-1.5 w-fit">
                         <MapPin className="h-3 w-3 text-[#C8A046] shrink-0" />
                         <span className="text-[10px] font-bold uppercase tracking-[0.4px] text-[#1A1C1A]">
@@ -125,17 +125,17 @@ export default function FigmaCenteredHero({ timeLeft, emblemSrc }: FigmaCentered
                     The Pan-African University Debating Championship is the continent&apos;s premier intellectual arena.
                 </p>
 
-                {/* ── CTAs — stacked on mobile, inline on desktop ── */}
-                <div className="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center md:gap-3">
+                {/* ── CTAs — items-start prevents width stretching, w-[220px] creates uniform pills ── */}
+                <div className="flex flex-col items-start gap-3 md:flex-row md:items-center md:gap-3">
                     <Link
                         to="/register"
-                        className="rounded-full border border-[#1A1C1A] px-5 py-3 md:py-2 text-sm font-bold text-[#1A1C1A] transition-colors hover:bg-[#1A1C1A] hover:text-[#FAF9F6] text-center"
+                        className="w-[220px] md:w-auto rounded-full border border-[#1A1C1A] px-5 py-3 md:py-2 text-sm font-bold text-[#1A1C1A] transition-colors hover:bg-[#1A1C1A] hover:text-[#FAF9F6] text-center"
                     >
                         Request An Invite
                     </Link>
                     <Link
                         to="/about"
-                        className="rounded-full bg-[#C8A046] px-5 py-3 md:py-2 text-sm font-bold text-[#3B2000] transition-colors hover:bg-[#B08C3E] text-center"
+                        className="w-[220px] md:w-auto rounded-full bg-[#C8A046] px-5 py-3 md:py-2 text-sm font-bold text-[#3B2000] transition-colors hover:bg-[#B08C3E] text-center"
                     >
                         Explore Vision
                     </Link>

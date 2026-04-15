@@ -30,7 +30,7 @@ export default function Navbar() {
     }, [lastScrollY]);
 
     // Leaving the contents exactly as requested
-    const links = [
+    const links: Array<{ name: string; path: string }> = [
         { name: 'Home', path: '/' },
         { name: 'About', path: '/about' },
         { name: 'Team', path: '/team' },
@@ -40,7 +40,7 @@ export default function Navbar() {
         { name: "Contact", path: "/contact" },
     ];
 
-    const isActive = (path) => location.pathname === path;
+    const isActive = (path: string): boolean => location.pathname === path;
     const isDashboard = location.pathname === '/';
 
     return (

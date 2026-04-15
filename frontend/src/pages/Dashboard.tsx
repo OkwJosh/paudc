@@ -19,7 +19,7 @@ import LOGO_URL from "../assets/paudc.png";
 import FigmaCenteredHero from "@/components/FigmaCenteredHero";
 
 /* ─── SVG trophy illustration ─── */
-function TrophyIllustration({ className }) {
+function TrophyIllustration({ className }: { className: string }) {
   return (
     <svg className={className} viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M28 35C12 35 6 50 10 65C14 78 25 80 30 75" stroke="#A4372C" strokeWidth="5" strokeLinecap="round" fill="none" />

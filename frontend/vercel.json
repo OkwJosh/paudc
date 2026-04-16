@@ -1,4 +1,14 @@
 {
     "buildCommand": "npm ci && npm run build",
-    "installCommand": "npm install"
+    "installCommand": "npm install",
+    "outputDirectory": "dist",
+    "routes": [
+        {
+            "handle": "filesystem"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
+        }
+    ]
 }

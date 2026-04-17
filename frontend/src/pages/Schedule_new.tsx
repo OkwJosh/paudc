@@ -149,7 +149,7 @@ export default function Schedule() {
       events: [
         {
           id: 19,
-          title: 'Recreation and Abuja Tour',
+          title: 'Rest and Recreation',
           time: 'Full Day',
           category: 'break'
         }
@@ -187,30 +187,30 @@ export default function Schedule() {
     },
     {
       date: '2026-12-12',
-      day: 'Day 8: Semi-Finals & Grand Finale',
+      day: 'Day 8: Semi-Finals & Finals',
       events: [
         {
           id: 24,
-          title: 'Public Speaking Semi-Finals',
-          time: '10:00AM - 11:30AM',
-          category: 'speaking'
+          title: 'Morning Briefing and Rollcall',
+          time: '9:30AM - 10:00AM',
+          category: 'briefing'
         },
         {
           id: 25,
-          title: 'Debate Semi-Finals',
-          time: '11:30AM - 1:30PM',
-          category: 'debate'
+          title: 'Public Speaking Out Round 2',
+          time: '10:10AM - 11:40AM',
+          category: 'speaking'
         },
         {
           id: 26,
-          title: 'TBD',
-          time: '1:30PM - 3:00PM',
-          category: 'other'
+          title: 'Debate Semi-Finals',
+          time: '11:40AM - 1:40PM',
+          category: 'debate'
         },
         {
           id: 27,
-          title: 'Grand Finale & Awards',
-          time: '6:00PM - 9:00PM',
+          title: 'Debate & Public Speaking Finals',
+          time: '5:00PM - 9:00PM',
           category: 'final'
         }
       ]
@@ -234,7 +234,7 @@ export default function Schedule() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#185E3B] to-[#124a2e]">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[#1B5E3B] to-[#0d301e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
             Tournament Schedule
@@ -275,18 +275,17 @@ export default function Schedule() {
                             </div>
 
                             <div className="flex-shrink-0">
-                              <span className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${
-                                event.category === 'debate' ? 'bg-blue-100 text-blue-800' :
-                                event.category === 'speaking' ? 'bg-green-100 text-green-800' :
-                                event.category === 'final' ? 'bg-red-100 text-red-800' :
-                                event.category === 'ceremony' ? 'bg-purple-100 text-purple-800' :
-                                event.category === 'panel' ? 'bg-yellow-100 text-yellow-800' :
-                                event.category === 'social' ? 'bg-pink-100 text-pink-800' :
-                                event.category === 'briefing' ? 'bg-orange-100 text-orange-800' :
-                                event.category === 'break' ? 'bg-indigo-100 text-indigo-800' :
-                                event.category === 'arrival' ? 'bg-cyan-100 text-cyan-800' :
-                                'bg-gray-100 text-gray-800'
-                              }`}>
+                              <span className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${event.category === 'debate' ? 'bg-blue-100 text-blue-800' :
+                                  event.category === 'speaking' ? 'bg-green-100 text-green-800' :
+                                    event.category === 'final' ? 'bg-red-100 text-red-800' :
+                                      event.category === 'ceremony' ? 'bg-purple-100 text-purple-800' :
+                                        event.category === 'panel' ? 'bg-yellow-100 text-yellow-800' :
+                                          event.category === 'social' ? 'bg-pink-100 text-pink-800' :
+                                            event.category === 'briefing' ? 'bg-orange-100 text-orange-800' :
+                                              event.category === 'break' ? 'bg-indigo-100 text-indigo-800' :
+                                                event.category === 'arrival' ? 'bg-cyan-100 text-cyan-800' :
+                                                  'bg-gray-100 text-gray-800'
+                                }`}>
                                 {event.category.toUpperCase()}
                               </span>
                             </div>

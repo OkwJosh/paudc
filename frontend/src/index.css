@@ -90,3 +90,40 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+/* Center hero content only on iPad and iMac-size screens. */
+@media (min-width: 768px) and (max-width: 1024px),
+(min-width: 2560px) {
+  .hero-device-center .hero-main-content {
+    align-items: center;
+  }
+
+  .hero-device-center .hero-meta-desktop,
+  .hero-device-center .hero-title,
+  .hero-device-center .hero-tagline-row,
+  .hero-device-center .hero-countdown,
+  .hero-device-center .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-device-center .hero-meta-desktop,
+  .hero-device-center .hero-title,
+  .hero-device-center .hero-description {
+    text-align: center;
+  }
+
+  .hero-device-center .hero-meta-desktop,
+  .hero-device-center .hero-countdown {
+    justify-content: center;
+  }
+
+  .hero-device-center .hero-tagline-row {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .hero-device-center .hero-countdown-item {
+    align-items: center;
+  }
+}

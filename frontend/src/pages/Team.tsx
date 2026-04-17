@@ -14,6 +14,15 @@ import kukah from '../assets/advisory_panel/Bishop Kukah.png';
 import asemota from '../assets/advisory_panel/Chief Asemota.png';
 import idornigie from '../assets/advisory_panel/Prof Idornigie.png';
 import gokum from '../assets/advisory_panel/Fr Gokum.png';
+import ladi from '../assets/loc/Ladi.jpeg';
+import amos from '../assets/loc/Amos.jpeg';
+import ayafa from '../assets/loc/Ayafa.jpeg';
+import eddie from '../assets/loc/Eddie.jpeg';
+import esther from '../assets/loc/Esther.jpeg';
+import nzube from '../assets/loc/Nzube.jpeg';
+import joan from '../assets/loc/Joan.jpeg';
+import tacfeek from '../assets/loc/Tacfeek.jpeg';
+import silas from '../assets/loc/Silas.jpeg';
 
 export default function Team() {
     const [capIndex, setCapIndex] = useState(0);
@@ -88,16 +97,58 @@ export default function Team() {
 
     const locTeam = [
         {
-            name: 'Placeholder Name 1',
-            role: 'Tournament Convener',
-            bio: 'Overseeing the strategic vision, partnerships, and overall execution of the championship.',
-            image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop'
+            name: 'MJ Ladi',
+            role: 'Partner',
+            bio: 'Strategic partner supporting the championship vision, partnerships, and overall organizational leadership.',
+            image: ladi
         },
         {
-            name: 'Placeholder Name 2',
-            role: 'Head of Operations',
-            bio: 'Ensuring seamless logistics, accommodations, and event flow for all attending delegates.',
-            image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2000&auto=format&fit=crop'
+            name: 'Joseph Amos',
+            role: 'Convener',
+            bio: 'Organizing and coordinating championship logistics, ensuring seamless execution across all tournament operations.',
+            image: amos
+        },
+        {
+            name: 'Ayafa Tonye',
+            role: 'Tournament Director',
+            bio: 'Managing tournament schedule, rounds, and competitive framework to ensure fair and excellent adjudication.',
+            image: ayafa
+        },
+        {
+            name: 'Edwin Ocheido',
+            role: 'Convener',
+            bio: 'Coordinating championship execution and logistics, supporting the convening team with operational excellence.',
+            image: eddie
+        },
+        {
+            name: 'Esther Adakole',
+            role: 'Welfare',
+            bio: 'Ensuring all delegates receive outstanding care, comfort, and support throughout the championship.',
+            image: esther
+        },
+        {
+            name: 'Nzube Nwaokoro',
+            role: 'Tournament Director',
+            bio: 'Overseeing tournament administration, competitive integrity, and the smooth flow of debate rounds.',
+            image: nzube
+        },
+        {
+            name: 'Joan Hart',
+            role: 'Socials',
+            bio: 'Coordinating social events and cultural celebrations that bring the Pan-African community together.',
+            image: joan
+        },
+        {
+            name: 'Tacfeek Sarayi',
+            role: 'Finance',
+            bio: 'Managing championship finances, budgeting, and ensuring fiscal responsibility throughout operations.',
+            image: tacfeek
+        },
+        {
+            name: 'Silas Mac-iPah',
+            role: 'Logistics',
+            bio: 'Coordinating venue operations, accommodations, transportation, and all logistical arrangements.',
+            image: silas
         }
     ];
 

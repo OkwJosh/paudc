@@ -60,12 +60,39 @@ export default function Dashboard() {
   return (
     <div className="bg-[#f6f0e1] w-full min-h-screen relative overflow-x-hidden text-[#022512]">
 
-      {/* ─── NAVBAR ─── */}
-      <Navbar />
+      {/*
+        ── HERO + NAVBAR WRAPPER ──────────────────────────────────────────────
+        On mobile (< 768px) and small desktop (1024–1535px):
+          → Navbar is in normal flow (relative), hero sits below it. No wrapper magic needed.
 
-      {/* ─── HERO ─── */}
-      {/* Removed the extra pt-28 wrapper here to eliminate the massive gap */}
-      <FigmaCenteredHero timeLeft={timeLeft} />
+        On iPad (768–1023px) and iMac/large (≥ 1536px):
+          → The wrapper is made exactly 100dvh tall.
+          → The Navbar is absolutely positioned at the top of the wrapper,
+             so it overlays the hero without consuming any vertical space.
+          → The hero then fills the full 100dvh and can truly center its content.
+
+        100dvh (dynamic viewport height) accounts for the browser's own chrome
+        (address bar, tab bar) on iPad Safari, so nothing gets clipped.
+        ─────────────────────────────────────────────────────────────────────
+      */}
+      <div className="
+        relative
+        md:h-[100dvh]
+        lg:h-auto
+        2xl:h-[100dvh]
+      ">
+        {/* Navbar: normal flow on mobile/lg, absolutely overlaid on md/2xl */}
+        <div className="
+          md:absolute md:top-0 md:left-0 md:right-0 md:z-50
+          lg:relative lg:top-auto lg:left-auto lg:right-auto lg:z-auto
+          2xl:absolute 2xl:top-0 2xl:left-0 2xl:right-0 2xl:z-50
+        ">
+          <Navbar />
+        </div>
+
+        {/* Hero fills the wrapper completely on md/2xl */}
+        <FigmaCenteredHero timeLeft={timeLeft} />
+      </div>
 
       {/* ─── FEATURES ─── */}
       <section className="relative z-10 max-w-5xl mx-auto px-6 py-20 md:pb-24 text-center">
@@ -135,7 +162,7 @@ export default function Dashboard() {
             { icon: <Trophy className="w-7 h-7 text-[#A4372C]" />, bg: "bg-[#A4372C]/10", title: "Debate Championship", desc: "Ten days of British Parliamentary debate rounds testing reasoning, persuasion, and teamwork." },
             { icon: <MessageSquare className="w-7 h-7 text-[#C8A046]" />, bg: "bg-[#C8A046]/10", title: "Public Speaking", desc: "Celebrating clarity, persuasion, and thought leadership through speech." },
             { icon: <GraduationCap className="w-7 h-7 text-[#1B5E3B]" />, bg: "bg-[#1B5E3B]/10", title: "Adjudicators Academy", desc: "Training and certification program for over 200 judges." },
-            { icon: <Mic className="w-7 h-7 text-[#A4372C]" />, bg: "bg-[#A4372C]/10", title: "Civic Panels", desc: "Voices of a Continent – Rethinking Pan-Africanism for a New Generation." },
+            { icon: <Mic className="w-7 h-7 text-[#A4372C]" />, bg: "bg-[#A4372C]/10", title: "Civic Panels", desc: "Voices of a Continent – Rethinking Pan-Arcanism for a New Generation." },
             { icon: <Lightbulb className="w-7 h-7 text-[#1B5E3B]" />, bg: "bg-[#1B5E3B]/10", title: "The Legacy Lab", desc: "Youth-led innovation space transforming debate insights into actionable initiatives." },
             { icon: <Palette className="w-7 h-7 text-[#C8A046]" />, bg: "bg-[#C8A046]/10", title: "Cultural Exhibition", desc: "Celebrating Africa's artistic diversity and shared identity as One Africa." },
           ].map((item, i) => (

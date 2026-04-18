@@ -23,6 +23,10 @@ import nzube from '../assets/loc/Nzube.jpeg';
 import joan from '../assets/loc/Joan.jpeg';
 import tacfeek from '../assets/loc/Tacfeek.jpeg';
 import silas from '../assets/loc/Silas.jpeg';
+import francis from '../assets/loc/Francis.jpeg';
+import emmanuel from '../assets/loc/Emmanuel.png';
+import kachi from '../assets/loc/Kachi.png';
+import dsm from '../assets/loc/Dsm.png';
 
 export default function Team() {
     const [capIndex, setCapIndex] = useState(0);
@@ -97,22 +101,10 @@ export default function Team() {
 
     const locTeam = [
         {
-            name: 'MJ Ladi',
-            role: 'Partner',
-            bio: 'Strategic partner supporting the championship vision, partnerships, and overall organizational leadership.',
-            image: ladi
-        },
-        {
             name: 'Joseph Amos',
             role: 'Convener',
             bio: 'Organizing and coordinating championship logistics, ensuring seamless execution across all tournament operations.',
             image: amos
-        },
-        {
-            name: 'Ayafa Tonye',
-            role: 'Tournament Director',
-            bio: 'Managing tournament schedule, rounds, and competitive framework to ensure fair and excellent adjudication.',
-            image: ayafa
         },
         {
             name: 'Edwin Ocheido',
@@ -121,10 +113,10 @@ export default function Team() {
             image: eddie
         },
         {
-            name: 'Esther Adakole',
-            role: 'Welfare',
-            bio: 'Ensuring all delegates receive outstanding care, comfort, and support throughout the championship.',
-            image: esther
+            name: 'Ayafa Tonye',
+            role: 'Tournament Director',
+            bio: 'Managing tournament schedule, rounds, and competitive framework to ensure fair and excellent adjudication.',
+            image: ayafa
         },
         {
             name: 'Nzube Nwaokoro',
@@ -133,10 +125,22 @@ export default function Team() {
             image: nzube
         },
         {
-            name: 'Joan Hart',
-            role: 'Socials',
-            bio: 'Coordinating social events and cultural celebrations that bring the Pan-African community together.',
-            image: joan
+            name: 'MJ Ladi',
+            role: 'Partner',
+            bio: 'Strategic partner supporting the championship vision, partnerships, and overall organizational leadership.',
+            image: ladi
+        },
+        {
+            name: 'DSM',
+            role: 'Chief of Staff',
+            bio: 'Providing strategic leadership and coordination across all championship operations and committee functions.',
+            image: dsm
+        },
+        {
+            name: 'Esther Adakole',
+            role: 'Welfare',
+            bio: 'Ensuring all delegates receive outstanding care, comfort, and support throughout the championship.',
+            image: esther
         },
         {
             name: 'Tacfeek Sarayi',
@@ -145,10 +149,34 @@ export default function Team() {
             image: tacfeek
         },
         {
+            name: 'Emmanuel Oyinloye',
+            role: 'Communication and Media',
+            bio: 'Managing championship communications, media relations, and ensuring compelling narrative around PAUDC 2026.',
+            image: emmanuel
+        },
+        {
             name: 'Silas Mac-iPah',
             role: 'Logistics',
             bio: 'Coordinating venue operations, accommodations, transportation, and all logistical arrangements.',
             image: silas
+        },
+        {
+            name: 'Joan Hart',
+            role: 'Socials and Enjoyment',
+            bio: 'Coordinating social events and cultural celebrations that bring the Pan-African community together.',
+            image: joan
+        },
+        {
+            name: 'Kachi Dominic',
+            role: 'Tech Lead',
+            bio: 'Leading technology infrastructure and digital solutions to support seamless championship operations.',
+            image: kachi
+        },
+        {
+            name: 'Barr Francis',
+            role: 'Visa Liaison',
+            bio: 'Facilitating visa documentation and travel arrangements, enabling seamless international delegate participation.',
+            image: francis
         }
     ];
 
@@ -332,11 +360,20 @@ export default function Team() {
                         <Card className="border border-[#A4372C]/20 shadow-xl max-w-2xl mx-auto bg-[#F6F0E1]/30 rounded-3xl overflow-hidden">
                             <CardContent className="p-8 md:p-12">
                                 <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
-                                    <img
-                                        src={locTeam[locIndex].image}
-                                        alt={locTeam[locIndex].name}
-                                        className="w-36 h-36 shrink-0 rounded-full object-cover border-4 border-[#A4372C] shadow-lg"
-                                    />
+                                    {locTeam[locIndex].image && (
+                                        <img
+                                            src={locTeam[locIndex].image}
+                                            alt={locTeam[locIndex].name}
+                                            className="w-36 h-36 shrink-0 rounded-full object-cover border-4 border-[#A4372C] shadow-lg"
+                                        />
+                                    )}
+                                    {!locTeam[locIndex].image && (
+                                        <div className="w-36 h-36 shrink-0 rounded-full bg-[#A4372C]/20 border-4 border-[#A4372C] shadow-lg flex items-center justify-center">
+                                            <div className="text-center">
+                                                <div className="text-[#A4372C] font-bold text-sm">Coming Soon</div>
+                                            </div>
+                                        </div>
+                                    )}
                                     <div>
                                         <h3 className="text-2xl font-bold text-[#1B5E3B] mb-2">{locTeam[locIndex].name}</h3>
                                         <p className="text-lg text-[#1B5E3B] font-bold mb-4">{locTeam[locIndex].role}</p>

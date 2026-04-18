@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { User, Building, FileText, CheckCircle2 } from 'lucide-react';
+import { User, Building, FileText, CheckCircle2, Calendar } from 'lucide-react';
 import { EmailPillInput } from '@/components/EmailPillInput';
 import { submitForm } from '@/lib/googleForms';
 
@@ -53,8 +53,8 @@ export default function Register() {
 
         try {
             const email = registrationType === 'institution' ? formData.your_contact_email : formData.email;
-            const name = registrationType === 'institution' 
-                ? formData.institution_name 
+            const name = registrationType === 'institution'
+                ? formData.institution_name
                 : `${formData.first_name} ${formData.last_name}`;
             const phone = registrationType === 'institution' ? formData.contact_phone : formData.phone;
             const institution = registrationType === 'individual' ? formData.university : formData.institution_name;
@@ -143,32 +143,25 @@ export default function Register() {
                         <Card className="border border-[#A4372C]/20 shadow-lg bg-white/80 backdrop-blur-sm hover:border-[#A4372C] transition-colors">
                             <CardContent className="p-6 md:p-8">
                                 <h3 className="text-lg md:text-2xl font-bold text-[#A4372C] mb-4 md:mb-6 flex items-center gap-2 md:gap-3">
-                                    <div className="p-1.5 md:p-2 bg-[#A4372C]/10 rounded-lg"><User className="w-5 h-5 md:w-6 md:h-6" /></div>
-                                    Adjudicator Eligibility
+                                    <div className="p-1.5 md:p-2 bg-[#A4372C]/10 rounded-lg"><Calendar className="w-5 h-5 md:w-6 md:h-6" /></div>
+                                    Registration Timeline
                                 </h3>
-                                <ul className="space-y-3 md:space-y-4 text-[#1B5E3B]/80 text-sm md:text-lg">
-                                    <li className="flex items-start gap-3 md:gap-4">
-                                        <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-[#A4372C] flex-shrink-0 mt-0.5" />
-                                        <span><strong>Experience Level:</strong> Minimum 2 years of competitive debate experience.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3 md:gap-4">
-                                        <CheckCircle2 className="w-6 h-6 text-[#A4372C] flex-shrink-0 mt-0.5" />
-                                        <span><strong>Training:</strong> All adjudicators must complete the pre-tournament certification.</span>
-                                    </li>
-                                </ul>
+                                <div className="space-y-4 md:space-y-6">
+                                    <div className="border-l-4 border-[#A4372C] pl-4 md:pl-6">
+                                        <p className="text-sm md:text-base font-bold text-[#A4372C] mb-1">Phase 1</p>
+                                        <p className="text-[#1B5E3B]/80 text-sm md:text-lg">April 20, 2026 - June 13, 2026</p>
+                                    </div>
+                                    <div className="border-l-4 border-[#A4372C] pl-4 md:pl-6">
+                                        <p className="text-sm md:text-base font-bold text-[#A4372C] mb-1">Phase 2</p>
+                                        <p className="text-[#1B5E3B]/80 text-sm md:text-lg">July 1, 2026 - August 31, 2026</p>
+                                    </div>
+                                    <div className="border-l-4 border-[#C8A046] pl-4 md:pl-6 pt-2">
+                                        <p className="text-sm md:text-base font-bold text-[#C8A046] mb-1">Payment Deadline</p>
+                                        <p className="text-[#1B5E3B]/80 text-sm md:text-lg">October 1, 2026</p>
+                                    </div>
+                                </div>
                             </CardContent>
                         </Card>
-                    </div>
-
-                    <div className="mt-12 bg-[#1B5E3B] text-[#F6F0E1] p-8 rounded-2xl shadow-xl">
-                        <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                            <span className="text-[#C8A046]">✦</span> Important Notes
-                        </h3>
-                        <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 text-lg">
-                            <p><strong className="text-[#C8A046]">Registration Deadline:</strong> October 31, 2026</p>
-                            <p><strong className="text-[#C8A046]">Cancellation:</strong> 50% refund until Nov 15, 2026</p>
-                            <p className="md:col-span-2"><strong className="text-[#C8A046]">Accommodation:</strong> Not included in registration fee</p>
-                        </div>
                     </div>
                 </div>
             </section>

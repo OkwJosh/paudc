@@ -203,7 +203,7 @@ export default function Schedule() {
         },
         {
           id: 26,
-          title: 'TBD',
+          title: 'Legacy Lab Idea Pitch semi-Finals',
           time: '1:30PM - 3:00PM',
           category: 'other'
         },
@@ -221,7 +221,7 @@ export default function Schedule() {
       events: [
         {
           id: 28,
-          title: 'Closing Ceremony and Departures',
+          title: 'Departure',
           time: 'Throughout the Day',
           category: 'closing'
         }
@@ -275,18 +275,17 @@ export default function Schedule() {
                             </div>
 
                             <div className="flex-shrink-0">
-                              <span className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${
-                                event.category === 'debate' ? 'bg-blue-100 text-blue-800' :
+                              <span className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${event.category === 'debate' ? 'bg-blue-100 text-blue-800' :
                                 event.category === 'speaking' ? 'bg-green-100 text-green-800' :
-                                event.category === 'final' ? 'bg-red-100 text-red-800' :
-                                event.category === 'ceremony' ? 'bg-purple-100 text-purple-800' :
-                                event.category === 'panel' ? 'bg-yellow-100 text-yellow-800' :
-                                event.category === 'social' ? 'bg-pink-100 text-pink-800' :
-                                event.category === 'briefing' ? 'bg-orange-100 text-orange-800' :
-                                event.category === 'break' ? 'bg-indigo-100 text-indigo-800' :
-                                event.category === 'arrival' ? 'bg-cyan-100 text-cyan-800' :
-                                'bg-gray-100 text-gray-800'
-                              }`}>
+                                  event.category === 'final' ? 'bg-red-100 text-red-800' :
+                                    event.category === 'ceremony' ? 'bg-purple-100 text-purple-800' :
+                                      event.category === 'panel' ? 'bg-yellow-100 text-yellow-800' :
+                                        event.category === 'social' ? 'bg-pink-100 text-pink-800' :
+                                          event.category === 'briefing' ? 'bg-orange-100 text-orange-800' :
+                                            event.category === 'break' ? 'bg-indigo-100 text-indigo-800' :
+                                              event.category === 'arrival' ? 'bg-cyan-100 text-cyan-800' :
+                                                'bg-gray-100 text-gray-800'
+                                }`}>
                                 {event.category.toUpperCase()}
                               </span>
                             </div>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
     return (
@@ -35,11 +35,11 @@ export default function Footer() {
                                     Event Schedule
                                 </Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link to="/resources" className="text-sm hover:text-[#C84B46] transition-colors">
                                     Resources
                                 </Link>
-                            </li>
+                            </li> */}
                             <li>
                                 <Link to="/faq" className="text-sm hover:text-[#C84B46] transition-colors">
                                     FAQ
@@ -69,17 +69,11 @@ export default function Footer() {
                     <div>
                         <h3 className="text-white text-sm font-semibold mb-4">Follow Us</h3>
                         <div className="flex space-x-4">
-                            <a href="#" className="hover:text-[#C84B46] transition-colors">
+                            <a href="https://www.facebook.com/people/Abuja-PAUDC-2026/61587158114165/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C84B46] transition-colors">
                                 <Facebook className="h-5 w-5" />
                             </a>
-                            <a href="#" className="hover:text-[#C84B46] transition-colors">
-                                <Twitter className="h-5 w-5" />
-                            </a>
-                            <a href="#" className="hover:text-[#C84B46] transition-colors">
+                            <a href="https://www.instagram.com/abujapaudc/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C84B46] transition-colors">
                                 <Instagram className="h-5 w-5" />
-                            </a>
-                            <a href="#" className="hover:text-[#C84B46] transition-colors">
-                                <Linkedin className="h-5 w-5" />
                             </a>
                         </div>
                     </div>

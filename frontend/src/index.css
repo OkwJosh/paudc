@@ -17,6 +17,79 @@ html {
   font-size: 14px;
 }
 
+/* Site-wide typography — Inter everywhere for uniformity */
+html, body, button, input, textarea, select {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Ultra-wide / iMac constraint ──────────────────────────────────────────
+ * Caps the entire layout at 1920px on 5K / large iMac displays so content
+ * never stretches infinitely across the screen.
+ * The fixed Navbar renders outside this stacking context so its background
+ * colour still bleeds full-viewport-width as expected.
+ * ───────────────────────────────────────────────────────────────────────── */
+#root {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Navbar height token used by pages that need a top-offset */
+:root {
+  --navbar-h: 4rem; /* keeps in sync with the h-16 Tailwind class on the nav */
+}
+
+/* ── Blog / Article prose styles ────────────────────────────────────────── */
+.prose-paudc {
+  color: #1B5E3B;
+  line-height: 1.8;
+}
+.prose-paudc h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #022512;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-paudc h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #022512;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.prose-paudc p {
+  margin-bottom: 1.25rem;
+  color: #022512cc;
+}
+.prose-paudc ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+  color: #022512cc;
+}
+.prose-paudc li {
+  margin-bottom: 0.4rem;
+}
+.prose-paudc strong {
+  color: #022512;
+  font-weight: 700;
+}
+.prose-paudc blockquote {
+  border-left: 4px solid #C8A046;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #022512aa;
+  margin: 1.5rem 0;
+}
+.prose-paudc a {
+  color: #1B5E3B;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

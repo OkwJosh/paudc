@@ -159,6 +159,13 @@ export const api = {
 				});
 				return { data };
 			},
+			update: async (id: number, payload: Partial<Enrollment>): Promise<ApiResponse<Enrollment>> => {
+				const data = await request<Enrollment>(`/api/v1/entities/enrollments/${id}`, {
+					method: 'PATCH',
+					body: JSON.stringify(payload),
+				});
+				return { data };
+			},
 		},
 	},
 };

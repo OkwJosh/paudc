@@ -3,11 +3,12 @@
 
 <head>
   <meta charset="UTF-8" />
-  <!-- Favicon for browser tabs and search results -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" href="/paudc.png" />
-  <!-- Apple Touch Icon for iOS home screen -->
-  <link rel="apple-touch-icon" href="/paudc.png" />
+  <!-- Favicon — Google requires a multiple of 48×48 px for Search results -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" href="/paudc.png" sizes="192x192" />
+  <link rel="icon" type="image/png" href="/paudc.png" sizes="512x512" />
+  <!-- Apple Touch Icon for iOS home screen (180×180 recommended) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/paudc.png" />
   <!-- Manifest for PWA -->
   <link rel="manifest" href="/manifest.json" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,18 +24,22 @@
     content="Join PAUDC 2026, the 18th Pan-African University Debating Championship, in Abuja, Nigeria (Dec 5–13). Featuring 1000+ participants, $20K in prizes, and the Legacy Lab for civic innovation." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.paudc2026.com/" />
-  <meta property="og:image" content="/paudc.png" />
+  <meta property="og:image" content="https://www.paudc2026.com/paudc.png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:image:alt" content="PAUDC 2026 logo" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="PAUDC 2026 | Pan-African University Debating Championship (18th Edition)" />
   <meta name="twitter:description"
     content="Join PAUDC 2026, the 18th Pan-African University Debating Championship, in Abuja, Nigeria (Dec 5–13). Featuring 1000+ participants, $20K in prizes, and the Legacy Lab for civic innovation." />
-  <meta name="twitter:image" content="/paudc.png" />
+  <meta name="twitter:image" content="https://www.paudc2026.com/paudc.png" />
+  <meta name="twitter:image:alt" content="PAUDC 2026 logo" />
   <meta name="theme-color" content="#1B5E3B" />
   <link rel="canonical" href="https://www.paudc2026.com/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <title>PAUDC 2026 | Pan-African University Debating Championship (18th Edition) – Abuja</title>
 
@@ -125,6 +130,18 @@
         "position": 7,
         "name": "FAQ",
         "item": "https://www.paudc2026.com/faq"
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "name": "Blog",
+        "item": "https://www.paudc2026.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "name": "LMS Portal",
+        "item": "https://www.paudc2026.com/lms"
       }
     ]
   }

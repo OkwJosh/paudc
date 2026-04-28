@@ -18,10 +18,13 @@ import Register from '@/pages/Register';
 import Login from '@/pages/Login';
 import LogoutCallback from '@/pages/LogoutCallback';
 import Dashboard from '@/pages/Dashboard';
+import BlogIndex from '@/pages/blog/BlogIndex';
+import BlogPost from '@/pages/blog/BlogPost';
 import LmsWaitlist from '@/pages/lms/LmsWaitlist';
 import LMSDashboard from '@/pages/lms/LMSDashboard';
 import LMSCourses from '@/pages/lms/LMSCourses';
 import LMSCourseDetail from '@/pages/lms/LMSCourseDetail';
+import LMSModuleViewer from '@/pages/lms/LMSModuleViewer';
 import NotFound from '@/pages/NotFound';
 
 const queryClient = new QueryClient();
@@ -44,6 +47,8 @@ const App = () => (
             <Route path="/resources" element={<Resources />} />
             <Route path="/legacy-lab" element={<LegacyLab />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/blog" element={<BlogIndex />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/auth/callback" element={<AuthCallback />} />
             <Route path="/auth/error" element={<AuthError />} />
             <Route path="/login" element={<Login />} />
@@ -54,6 +59,7 @@ const App = () => (
             <Route path="/dashboard" element={<LMSDashboard />} />
             <Route path="/lms/courses" element={<LMSCourses />} />
             <Route path="/lms/courses/:id" element={<LMSCourseDetail />} />
+            <Route path="/lms/courses/:courseId/modules/:moduleId" element={<LMSModuleViewer />} />
             {/* Add protected admin routes if needed */}
             <Route path="*" element={<NotFound />} />
           </Routes>

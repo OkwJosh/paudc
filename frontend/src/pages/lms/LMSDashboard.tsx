@@ -10,6 +10,10 @@ import {
   Award,
   Users,
   BarChart2,
+  Settings,
+  PlusCircle,
+  ShieldCheck,
+  ListChecks,
 } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { api, type Course, type Enrollment } from "@/lib/api";
@@ -88,6 +92,39 @@ export default function LMSDashboard() {
     },
   ];
 
+  const isAdmin = user?.role === 'admin';
+
+  const ADMIN_ACTIONS = [
+    {
+      icon: PlusCircle,
+      label: 'Create Course',
+      desc: 'Add a new course or module',
+      href: '/lms/courses',
+      color: '#1B5E3B',
+    },
+    {
+      icon: ListChecks,
+      label: 'Manage Content',
+      desc: 'Edit modules & materials',
+      href: '/lms/courses',
+      color: '#C8A046',
+    },
+    {
+      icon: Users,
+      label: 'Participants',
+      desc: 'View enrolled delegates',
+      href: '/team',
+      color: '#022512',
+    },
+    {
+      icon: BarChart2,
+      label: 'Analytics',
+      desc: 'Enrolment & progress data',
+      href: '/dashboard',
+      color: '#A4372C',
+    },
+  ];
+
   const QUICK_LINKS = [
     {
       icon: Calendar,
@@ -134,8 +171,14 @@ export default function LMSDashboard() {
               PAUDC 2026 LMS Portal
             </p>
           </div>
-          <span className="bg-[#1B5E3B] text-[#F6F0E1] text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">
-            {user?.role || "Participant"}
+          <span
+            className="text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide"
+            style={{
+              background: isAdmin ? '#C8A046' : '#1B5E3B',
+              color: isAdmin ? '#022512' : '#F6F0E1',
+            }}
+          >
+            {isAdmin ? '⚙ Admin' : (user?.role || 'Participant')}
           </span>
         </header>
 
@@ -250,6 +293,49 @@ export default function LMSDashboard() {
               </div>
             )}
           </section>
+
+          {/* Admin Panel — visible only to admin role */}
+          {isAdmin && (
+            <section className="bg-[#022512] rounded-2xl p-6 border border-[#022512]/10">
+              <div className="flex items-center gap-2 mb-4">
+                <ShieldCheck className="w-4 h-4 text-[#C8A046]" />
+                <h2 className="text-sm font-black text-[#F6F0E1]">Admin Panel</h2>
+                <span className="ml-auto text-[10px] font-bold uppercase tracking-wider bg-[#C8A046] text-[#022512] px-2 py-0.5 rounded-full">
+                  Admin Only
+                </span>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                {ADMIN_ACTIONS.map(({ icon: Icon, label, desc, href, color }) => (
+                  <Link
+                    key={href + label}
+                    to={href}
+                    className="bg-white/8 hover:bg-white/14 rounded-xl p-4 flex items-start gap-3 transition-colors group"
+                  >
+                    <div
+                      className="rounded-lg p-2 shrink-0 mt-0.5"
+                      style={{ background: `${color}30` }}
+                    >
+                      <Icon className="w-4 h-4" style={{ color }} />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="font-bold text-[#F6F0E1] text-xs leading-tight group-hover:text-[#C8A046] transition-colors">
+                        {label}
+                      </p>
+                      <p className="text-[10px] text-[#F6F0E1]/45 mt-0.5 leading-tight">
+                        {desc}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-4 pt-4 border-t border-white/10 flex items-center gap-2">
+                <Settings className="w-3.5 h-3.5 text-[#F6F0E1]/35" />
+                <p className="text-xs text-[#F6F0E1]/40">
+                  Full admin settings are available in the backend dashboard.
+                </p>
+              </div>
+            </section>
+          )}
 
           {/* Quick Links */}
           <section>

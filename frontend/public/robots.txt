@@ -1,9 +1,12 @@
 User-agent: *
 Allow: /
+Allow: /blog
+Allow: /blog/
 Disallow: /admin
 Disallow: /dashboard
 Disallow: /auth
 Disallow: /login
+Disallow: /lms/courses/*/modules/
 Crawl-delay: 1
 
 Sitemap: https://www.paudc2026.com/sitemap.xml

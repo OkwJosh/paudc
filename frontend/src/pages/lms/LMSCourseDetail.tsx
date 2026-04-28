@@ -180,9 +180,10 @@ export default function LMSCourseDetail() {
                                             const done = i < completedModules;
                                             const current = i === completedModules;
                                             return (
-                                                <div
+                                                <Link
                                                     key={i}
-                                                    className={`flex items-center gap-3 p-3 rounded-xl ${done ? 'bg-[#1B5E3B]/8' :
+                                                    to={`/lms/courses/${id}/modules/${i + 1}`}
+                                                    className={`flex items-center gap-3 p-3 rounded-xl transition-colors hover:opacity-80 ${done ? 'bg-[#1B5E3B]/8' :
                                                             current ? 'bg-[#C8A046]/8' :
                                                                 'bg-[#022512]/3'
                                                         }`}
@@ -212,7 +213,7 @@ export default function LMSCourseDetail() {
                                                             In Progress
                                                         </span>
                                                     )}
-                                                </div>
+                                                </Link>
                                             );
                                         })}
                                     </div>
@@ -253,9 +254,12 @@ export default function LMSCourseDetail() {
                                             <span className="text-xs font-bold text-[#1B5E3B]">Enrolled</span>
                                         </div>
 
-                                        <button className="w-full bg-[#1B5E3B] text-[#F6F0E1] font-bold py-3 rounded-xl text-sm hover:bg-[#0d301e] transition-colors">
+                                        <Link
+                                            to={`/lms/courses/${id}/modules/${completedModules + 1}`}
+                                            className="block w-full text-center bg-[#1B5E3B] text-[#F6F0E1] font-bold py-3 rounded-xl text-sm hover:bg-[#0d301e] transition-colors"
+                                        >
                                             Continue Learning
-                                        </button>
+                                        </Link>
                                     </>
                                 ) : (
                                     <>

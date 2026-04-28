@@ -1,13 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
-  Trophy,
-
-  Lightbulb,
   Globe,
-  GraduationCap,
-  MessageSquare,
-  Palette,
+  ArrowRight,
+  CheckCircle2,
 } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { EventStructuredData } from "@/components/StructuredData";
@@ -18,6 +14,11 @@ import vunalogo from "../assets/vunalogo.jpg";
 import vuef from "../assets/vuef.jpg";
 import kakaki from "../assets/kakaki.png";
 import FigmaCenteredHero from "@/components/FigmaCenteredHero";
+import debateChampionshipIcon from "../assets/event-pillars/debate-championship.svg";
+import publicSpeakingIcon from "../assets/event-pillars/public-speaking.svg";
+import civicPanelIcon from "../assets/event-pillars/civic-panel-sessions.svg";
+import legacyLabIcon from "../assets/event-pillars/legacy-lab.svg";
+import culturalExhibitionIcon from "../assets/event-pillars/cultural-exhibition.svg";
 
 function TrophyIllustration({ className }: { className: string }) {
   return (
@@ -129,25 +130,117 @@ export default function Dashboard() {
         </div>
       </section>
 
-      <section className="relative z-10 py-24 px-6 max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-black mb-4 text-[#022512]">Event Pillars</h2>
-        <p className="text-lg text-[#022512]/70 mb-16">
-          Ten days of intellectual excellence, cultural celebration, and Pan-African unity.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left">
-          {[
-            { icon: <Trophy className="w-7 h-7 text-[#A4372C]" />, bg: "bg-[#A4372C]/10", title: "Debate Championship", desc: "Ten days of British Parliamentary debate rounds testing reasoning, persuasion, and teamwork." },
-            { icon: <MessageSquare className="w-7 h-7 text-[#C8A046]" />, bg: "bg-[#C8A046]/10", title: "Public Speaking", desc: "Celebrating clarity, persuasion, and thought leadership through speech." },
-            { icon: <GraduationCap className="w-7 h-7 text-[#1B5E3B]" />, bg: "bg-[#1B5E3B]/10", title: "Adjudicators Academy", desc: "Training and certification program for over 200 judges." },
-            { icon: <Lightbulb className="w-7 h-7 text-[#1B5E3B]" />, bg: "bg-[#1B5E3B]/10", title: "The Legacy Lab", desc: "Youth-led innovation space transforming debate insights into actionable initiatives." },
-            { icon: <Palette className="w-7 h-7 text-[#C8A046]" />, bg: "bg-[#C8A046]/10", title: "Cultural Exhibition", desc: "Celebrating Africa's artistic diversity and shared identity as One Africa." },
-          ].map((item, i) => (
-            <div key={i} className="bg-white p-8 rounded-3xl shadow-lg border border-[#022512]/5 hover:-translate-y-2 transition-transform duration-300">
-              <div className={`w-14 h-14 ${item.bg} rounded-2xl flex items-center justify-center mb-6`}>
-                {item.icon}
+      <section className="relative z-10 py-24 px-6 max-w-7xl mx-auto">
+        <div className="text-center mb-14">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 text-[#022512]">Event Pillars</h2>
+          <p className="text-lg text-[#022512]/70">
+            Ten days of intellectual excellence, cultural celebration, and Pan-African unity.
+          </p>
+        </div>
+
+        {/* Top row: 2/3 wide white card + 1/3 dark card */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {/* Debate Championship — large */}
+          <div className="md:col-span-2 bg-white rounded-[12px] p-8 md:p-10 shadow-md border border-[#022512]/5 flex flex-col min-h-[380px]">
+            <div className="w-14 h-14 bg-[#022512] rounded-[10px] flex items-center justify-center mb-7">
+              <img
+                src={debateChampionshipIcon}
+                alt=""
+                aria-hidden="true"
+                className="w-7 h-6"
+              />
+            </div>
+            <h3 className="text-3xl md:text-4xl font-black text-[#022512] mb-4 leading-tight">
+              Debate Championship
+            </h3>
+            <p className="text-[#022512]/65 text-base leading-relaxed max-w-md">
+              Ten days of British Parliamentary debate rounds testing reasoning,
+              persuasion and teamwork
+            </p>
+            <Link
+              to="/about"
+              className="mt-auto inline-flex items-center gap-2 text-[#022512] font-semibold text-sm hover:gap-3 transition-all pt-8"
+            >
+              Explore Methodology <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* Public Speaking — dark card */}
+          <div className="bg-[#022512] text-[#F6F0E1] rounded-[12px] p-8 md:p-10 shadow-md flex flex-col min-h-[380px]">
+            <div className="w-14 h-14 bg-[#0A3320] rounded-[10px] flex items-center justify-center mb-7">
+              <img
+                src={publicSpeakingIcon}
+                alt=""
+                aria-hidden="true"
+                className="w-5 h-4"
+              />
+            </div>
+            <h3 className="text-2xl font-black mb-4 leading-tight">Public Speaking</h3>
+            <p className="text-[#F6F0E1]/75 text-sm leading-relaxed">
+              Celebrating clarity, persuasion and thought leadership through speech
+            </p>
+            <div className="mt-auto pt-7 border-t border-[#F6F0E1]/15 space-y-3">
+              <div className="flex items-center gap-2.5 text-sm">
+                <CheckCircle2 className="w-4 h-4 text-[#F6F0E1]/65" />
+                <span>Keynote Mastery</span>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-[#022512]">{item.title}</h3>
-              <p className="text-[#022512]/70 leading-relaxed">{item.desc}</p>
+              <div className="flex items-center gap-2.5 text-sm">
+                <CheckCircle2 className="w-4 h-4 text-[#F6F0E1]/65" />
+                <span>Impromptu Logic</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom row: 3 equal white cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              icon: civicPanelIcon,
+              title: "Civic Panel Sessions",
+              desc: "Training and certification program for over 200 judges",
+              cta: "Certification Program",
+              href: "/speakers",
+            },
+            {
+              icon: legacyLabIcon,
+              title: "Legacy Lab",
+              desc: "Youth led innovation spaces transforming debate insights into actionable initiatives.",
+              cta: "View Archives",
+              href: "/legacy-lab",
+            },
+            {
+              icon: culturalExhibitionIcon,
+              title: "Cultural Exhibition",
+              desc: "Celebrating Africa's artistic diversity and shared identity as One Africa.",
+              cta: "Upcoming Events",
+              href: "/schedule",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-[12px] p-7 md:p-8 shadow-md border border-[#022512]/5 flex flex-col min-h-[280px]"
+            >
+              <div className="w-12 h-12 bg-[#F6F0E1] rounded-[8px] flex items-center justify-center mb-6">
+                <img
+                  src={item.icon}
+                  alt=""
+                  aria-hidden="true"
+                  className="w-[18px] h-[18px] object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-black text-[#022512] mb-3 leading-tight">
+                {item.title}
+              </h3>
+              <p className="text-[#022512]/60 text-sm leading-relaxed mb-7">
+                {item.desc}
+              </p>
+              <Link
+                to={item.href}
+                className="mt-auto text-[#C8A046] hover:text-[#b08c3e] font-semibold text-sm transition-colors"
+              >
+                {item.cta}
+              </Link>
             </div>
           ))}
         </div>

@@ -40,8 +40,9 @@ export default function Navbar() {
         { name: 'Team', path: '/team' },
         { name: 'Schedule', path: '/schedule' },
         { name: 'Civic Panel', path: '/speakers' },
+        // { name: 'Blog', path: '/blog' }, // hidden for now — restore when blog launches
         { name: 'FAQ', path: '/faq' },
-        { name: "Contact", path: "/contact" },
+        { name: 'Contact', path: '/contact' },
     ];
 
     const isActive = (path: string): boolean => location.pathname === path;
@@ -58,7 +59,7 @@ export default function Navbar() {
                 ${isSolidBackground ? 'bg-white shadow-md py-0' : 'bg-transparent py-2 md:py-4'}
             `}
         >
-            <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-14">
+            <div className="max-w-7xl 2xl:max-w-screen-xl mx-auto px-5 md:px-10 lg:px-14 2xl:px-20">
                 <div className="flex justify-between items-center h-16">
 
                     {/* ── Logo ── */}
@@ -66,18 +67,18 @@ export default function Navbar() {
                         <img
                             src={LOGO_URL}
                             alt="PAUDC 2026 Logo"
-                            className="h-12 md:h-14 lg:h-16 w-auto object-contain transition-all duration-300"
+                            className="h-12 md:h-14 lg:h-16 2xl:h-[4.5rem] w-auto object-contain transition-all duration-300"
                         />
                     </Link>
 
                     {/* ── Desktop Navigation ── */}
-                    <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
-                        <div className="flex space-x-4 xl:space-x-8 mr-2 xl:mr-4">
+                    <div className="hidden lg:flex items-center gap-4 xl:gap-7 2xl:gap-10">
+                        <div className="flex gap-4 xl:gap-7 2xl:gap-9">
                             {links.map((link) => (
                                 <Link
                                     key={link.name}
                                     to={link.path}
-                                    className={`text-[13px] xl:text-sm transition-colors duration-200 whitespace-nowrap ${isActive(link.path)
+                                    className={`text-[13px] xl:text-sm 2xl:text-base transition-colors duration-200 whitespace-nowrap ${isActive(link.path)
                                             ? 'text-[#022512] font-bold'
                                             : 'text-[#022512]/60 font-medium hover:text-[#022512]'
                                         }`}
@@ -87,14 +88,14 @@ export default function Navbar() {
                             ))}
                         </div>
 
-                        <div className="flex items-center space-x-3 xl:space-x-4 shrink-0">
+                        <div className="flex items-center gap-3 shrink-0">
                             <a href="/lms">
-                                <Button className="bg-transparent border border-[#022512]/20 text-[#022512] hover:bg-[#022512] hover:text-white transition-colors duration-300 font-semibold shadow-none rounded-full px-4 xl:px-5 h-9 text-xs xl:text-sm">
+                                <Button className="bg-transparent border border-[#022512]/20 text-[#022512] hover:bg-[#022512] hover:text-white transition-colors duration-300 font-semibold shadow-none rounded-full px-4 xl:px-5 h-9 text-xs xl:text-sm 2xl:text-base 2xl:h-10">
                                     LMS Portal
                                 </Button>
                             </a>
                             <a href="/invite">
-                                <Button className="bg-[#C8A046] hover:bg-[#b08c3e] text-[#022512] font-bold shadow-none rounded-full px-4 xl:px-5 h-9 text-xs xl:text-sm">
+                                <Button className="bg-[#C8A046] hover:bg-[#b08c3e] text-[#022512] font-bold shadow-none rounded-full px-4 xl:px-5 h-9 text-xs xl:text-sm 2xl:text-base 2xl:h-10">
                                     Request an invite
                                 </Button>
                             </a>

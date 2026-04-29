@@ -109,7 +109,7 @@ export default function FigmaCenteredHero({ timeLeft }: FigmaCenteredHeroProps) 
                     style={{ fontFamily: "'Anton', sans-serif", lineHeight: 1 }}
                     className="
                         uppercase font-normal
-                        text-[clamp(5.5rem,18vw,180px)]
+                        text-[clamp(6.75rem,18vw,180px)]
                         tracking-[-0.04em] md:tracking-[-0.06em]
                         mb-4 w-full
                     "
@@ -140,7 +140,7 @@ export default function FigmaCenteredHero({ timeLeft }: FigmaCenteredHeroProps) 
                 </div>
 
                 {/* ── Mobile: Tagline Only ── */}
-                <p className="md:hidden text-lg text-[#544434B3] mb-8 w-full text-left">
+                <p className="md:hidden text-sm text-[#544434B3] mb-8 w-full text-left">
                     The Sound of Africa&apos;s Resolve
                 </p>
 

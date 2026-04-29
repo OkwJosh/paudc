@@ -198,7 +198,7 @@ export default function Dashboard() {
             {
               icon: civicPanelIcon,
               title: "Civic Panel Sessions",
-              desc: "Training and certification program for over 200 judges",
+              desc: "Voices of a Continent: Rethininking Pan Africanism for a New Generation.",
               cta: "Certification Program",
               href: "/speakers",
             },
